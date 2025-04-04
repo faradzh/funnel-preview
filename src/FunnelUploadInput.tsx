@@ -12,6 +12,7 @@ function FunnelUploadInput({ onUpload }: Props) {
       <Upload size={20} />
       <span>Upload JSON File</span>
       <input
+        data-testid="jsonInput"
         id="jsonInput"
         type="file"
         className="hidden"
