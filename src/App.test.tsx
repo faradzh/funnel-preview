@@ -33,5 +33,14 @@ describe("App", () => {
 
     // assert that funnel button block is displayed
     expect(await screen.getByText("Nice Menu!")).toBeInTheDocument();
+
+    const nextBtn = await screen.getByRole("button", { name: /next page/i });
+
+    await userEvent.click(nextBtn);
+
+    // assert that next page is displayed
+    expect(
+      await screen.getByText("Thanks for stopping by!")
+    ).toBeInTheDocument();
   });
 });

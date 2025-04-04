@@ -38,7 +38,8 @@ function Pagination({ funnel, currentPageIndex, setCurrentPageIndex }: Props) {
   return (
     <div className="flex flex-row space-x-4 m-auto items-center justify-center lg:flex-col lg:space-y-4 lg:space-x-0">
       <button
-        className="bg-[#247BA0] hover:bg-[#216887] disabled:bg-gray-400 text-white rounded-lg py-2 px-4 cursor-pointer"
+        aria-label="Previous Page"
+        className="bg-[#247BA0] hover:bg-[#216887] disabled:bg-gray-400 disabled:cursor-not-allowed text-white rounded-lg py-2 px-4 cursor-pointer"
         onClick={prevPage}
         disabled={currentPageIndex === 0}
       >
@@ -48,7 +49,8 @@ function Pagination({ funnel, currentPageIndex, setCurrentPageIndex }: Props) {
         Page {currentPageIndex + 1} of {fullPagesLength}
       </span>
       <button
-        className="bg-[#247BA0] hover:bg-[#216887] disabled:bg-gray-400 text-white rounded-lg py-2 px-4 cursor-pointer"
+        aria-label="Next Page"
+        className="bg-[#247BA0] hover:bg-[#216887] disabled:bg-gray-400 disabled:cursor-not-allowed text-white rounded-lg py-2 px-4 cursor-pointer"
         onClick={nextPage}
         disabled={currentPageIndex >= fullPagesLength - 1}
       >
