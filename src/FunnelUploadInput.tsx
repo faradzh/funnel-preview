@@ -3,14 +3,14 @@ import { Upload } from "lucide-react";
 interface Props {
   onUpload(e: React.SyntheticEvent): void;
 }
-function FunnelUpload({ onUpload }: Props) {
+function FunnelUploadInput({ onUpload }: Props) {
   return (
     <label
-      className="flex max-w-[300px] m-auto items-center justify-center text-white rounded-lg cursor-pointer py-2 px-4 text-center space-x-2 bg-blue-600"
+      className="bg-[#247BA0] hover:bg-[#216887] text-white font-medium py-3 px-6 rounded-lg w-full mb-4 flex items-center justify-center space-x-2 cursor-pointer"
       htmlFor="jsonInput"
     >
       <Upload size={20} />
-      <span>Select FUNNEL JSON File</span>
+      <span>Upload JSON File</span>
       <input
         id="jsonInput"
         type="file"
@@ -22,4 +22,4 @@ function FunnelUpload({ onUpload }: Props) {
   );
 }
 
-export default FunnelUpload;
+export default FunnelUploadInput;

@@ -26,10 +26,14 @@ function Pagination({ funnel, currentPageIndex, setCurrentPageIndex }: Props) {
     return null;
   }
 
+  if (fullPagesLength === 1) {
+    return null;
+  }
+
   return (
-    <div className="flex items-center justify-center space-x-4">
+    <div className="flex flex-col items-center justify-center space-y-4">
       <button
-        className="bg-blue-600 text-white rounded-lg py-2 px-4 cursor-pointer"
+        className="bg-[#247BA0] hover:bg-[#216887] text-white rounded-lg py-2 px-4 cursor-pointer"
         onClick={prevPage}
       >
         <ChevronLeft size={20} />
@@ -38,7 +42,7 @@ function Pagination({ funnel, currentPageIndex, setCurrentPageIndex }: Props) {
         Page {currentPageIndex + 1} of {fullPagesLength}
       </span>
       <button
-        className="bg-blue-600 text-white rounded-lg py-2 px-4 cursor-pointer"
+        className="bg-[#247BA0] hover:bg-[#216887] text-white rounded-lg py-2 px-4 cursor-pointer"
         onClick={nextPage}
       >
         <ChevronRight size={20} />
