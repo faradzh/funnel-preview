@@ -11,7 +11,7 @@ function ButtonBlock({ block }: Props) {
         className="py-3 px-6 rounded-lg font-medium"
         style={{
           backgroundColor: block.bgColor || "#0076FF",
-          color: block.color || "black",
+          color: block.color || "#000000",
         }}
       >
         {block.text}

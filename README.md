@@ -138,6 +138,13 @@ The JSON files should follow this structure:
 }
 ```
 
+## To-Do List
+
+- Improve Accessibility
+- Potentially enhance "mobile" experience
+- Increase test coverage to 85%
+- Use proper theming or design system to unify several arbitrary sizes, spacing and color values
+
 ## Development
 
 ### Running Tests
