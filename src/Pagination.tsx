@@ -1,5 +1,6 @@
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Funnel } from "./content-blocks/types";
+import { useEffect } from "react";
 
 interface Props {
   funnel: Funnel | null;
@@ -22,6 +23,10 @@ function Pagination({ funnel, currentPageIndex, setCurrentPageIndex }: Props) {
     }
   }
 
+  useEffect(() => {
+    setCurrentPageIndex(0);
+  }, [funnel, setCurrentPageIndex]);
+
   if (!funnel?.pages || funnel.pages.length === 0 || fullPagesLength === 0) {
     return null;
   }
@@ -31,10 +36,11 @@ function Pagination({ funnel, currentPageIndex, setCurrentPageIndex }: Props) {
   }
 
   return (
-    <div className="flex flex-col items-center justify-center space-y-4">
+    <div className="flex flex-row space-x-4 m-auto lg:flex-col items-center justify-center lg:space-y-4 lg:space-x-0">
       <button
-        className="bg-[#247BA0] hover:bg-[#216887] text-white rounded-lg py-2 px-4 cursor-pointer"
+        className="bg-[#247BA0] hover:bg-[#216887] disabled:bg-gray-400 text-white rounded-lg py-2 px-4 cursor-pointer"
         onClick={prevPage}
+        disabled={currentPageIndex === 0}
       >
         <ChevronLeft size={20} />
       </button>
@@ -42,8 +48,9 @@ function Pagination({ funnel, currentPageIndex, setCurrentPageIndex }: Props) {
         Page {currentPageIndex + 1} of {fullPagesLength}
       </span>
       <button
-        className="bg-[#247BA0] hover:bg-[#216887] text-white rounded-lg py-2 px-4 cursor-pointer"
+        className="bg-[#247BA0] hover:bg-[#216887] disabled:bg-gray-400 text-white rounded-lg py-2 px-4 cursor-pointer"
         onClick={nextPage}
+        disabled={currentPageIndex >= fullPagesLength - 1}
       >
         <ChevronRight size={20} />
       </button>
