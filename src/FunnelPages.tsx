@@ -5,7 +5,7 @@ interface Props {
   funnel: FunnelI | null;
   currentPageIndex: number;
 }
-function FunnelOverview({ funnel, currentPageIndex }: Props) {
+function FunnelPages({ funnel, currentPageIndex }: Props) {
   if (!funnel) {
     return null;
   }
@@ -23,4 +23,4 @@ function FunnelOverview({ funnel, currentPageIndex }: Props) {
   );
 }
 
-export default FunnelOverview;
+export default FunnelPages;

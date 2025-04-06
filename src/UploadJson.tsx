@@ -1,8 +1,11 @@
-import { ScanEye } from "lucide-react";
+import { Fullscreen, ScanEye } from "lucide-react";
 
 import FunnelUploadInput from "./FunnelUploadInput";
+import { useIsMobile } from "./hooks";
 
-function UploadJson({ funnel, setFunnel }: any) {
+function UploadJson({ funnel, setFunnel, setFullscreen }: any) {
+  const isMobile = useIsMobile();
+
   function handleFunnelChange(e: React.SyntheticEvent) {
     const target = e.target as HTMLInputElement;
     const file = target.files?.[0];
@@ -15,6 +18,7 @@ function UploadJson({ funnel, setFunnel }: any) {
         try {
           const json = JSON.parse(target?.result);
           setFunnel(json);
+          isMobile && setFullscreen(true);
         } catch (_) {
           alert("Invalid JSON file");
         }
@@ -48,9 +52,19 @@ function UploadJson({ funnel, setFunnel }: any) {
 
         <FunnelUploadInput onUpload={handleFunnelChange} />
 
-        <p className="text-sm text-gray-500 text-center">
+        <p className="text-sm text-gray-500 text-center mb-6">
           Supported format: .json files only
         </p>
+
+        {funnel && isMobile ? (
+          <button
+            onClick={() => setFullscreen(true)}
+            className="flex items-center text-white bg-[#F08080] rounded-lg py-2 px-4 cursor-pointer"
+          >
+            <Fullscreen size={20} className="mr-2" />
+            <span>Preview</span>
+          </button>
+        ) : null}
       </div>
     </div>
   );

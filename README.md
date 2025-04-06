@@ -144,6 +144,7 @@ The JSON files should follow this structure:
 - Potentially enhance "mobile" experience
 - Increase test coverage to 85%
 - Use proper theming or design system to unify several arbitrary sizes, spacing and color values
+- If there was an "agreement" on the JSON structure, I would also add validation using ZOD or similar in order to avoid invalid samples right during the file upload.
 
 ## Development
 

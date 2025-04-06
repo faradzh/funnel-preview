@@ -31,9 +31,13 @@ export interface ListB extends Block {
   items: ListItem[];
 }
 
+export interface Page {
+  id: string;
+  blocks: Block[];
+}
 export interface Funnel {
   id: string;
   name: string;
   bgColor: string;
-  pages: Array<{ id: string; blocks: Block[] }>;
+  pages: Page[];
 }
