@@ -15,8 +15,6 @@ export default ({ children }: { children: React.ReactNode }) => {
       pagination={{ clickable: true }}
       spaceBetween={5}
       slidesPerView={1}
-      onSlideChange={() => console.log("slide change")}
-      onSwiper={(swiper) => console.log(swiper)}
     >
       {Children.map(children, (child) => (
         <SwiperSlide>{child}</SwiperSlide>

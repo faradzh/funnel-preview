@@ -1,5 +1,5 @@
-import { renderBlock } from "./content-blocks/renderBlock";
-import { Block, Page } from "./content-blocks/types";
+import { renderBlock } from "../content-blocks/renderBlock";
+import { Block, Page } from "../content-blocks/types";
 
 interface Props {
   page: Page;

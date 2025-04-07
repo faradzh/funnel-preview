@@ -1,6 +1,6 @@
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { Funnel } from "./content-blocks/types";
 import { useEffect } from "react";
+import { Funnel } from "../content-blocks/types";
 
 interface Props {
   funnel: Funnel | null;

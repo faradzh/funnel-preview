@@ -1,9 +1,10 @@
 import React from "react";
-import { Funnel } from "./content-blocks/types";
 import { X } from "lucide-react";
+
 import MobileSlider from "./MobileSlider";
 import ContentWrapper from "./ContentWrapper";
 import FunnelPage from "./FunnelPage";
+import { Funnel } from "../content-blocks/types";
 
 interface Props {
   funnel: Funnel | null;

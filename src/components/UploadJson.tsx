@@ -1,9 +1,15 @@
 import { Fullscreen, ScanEye } from "lucide-react";
 
 import FunnelUploadInput from "./FunnelUploadInput";
-import { useIsMobile } from "./hooks";
+import { useIsMobile } from "../hooks";
+import { Funnel } from "../content-blocks/types";
 
-function UploadJson({ funnel, setFunnel, setFullscreen }: any) {
+interface Props {
+  funnel: Funnel | null;
+  setFunnel: (funnel: Funnel) => void;
+  setFullscreen: (fullscreen: boolean) => void;
+}
+function UploadJson({ funnel, setFunnel, setFullscreen }: Props) {
   const isMobile = useIsMobile();
 
   function handleFunnelChange(e: React.SyntheticEvent) {
@@ -14,9 +20,13 @@ function UploadJson({ funnel, setFunnel, setFullscreen }: any) {
       const reader = new FileReader();
 
       reader.onload = (e: ProgressEvent<FileReader>) => {
-        const target = e.target as any;
+        const target = e.target as FileReader;
         try {
-          const json = JSON.parse(target?.result);
+          if (!target?.result) {
+            alert("Invalid JSON file");
+            return;
+          }
+          const json = JSON.parse(target?.result as string);
           setFunnel(json);
           isMobile && setFullscreen(true);
         } catch (_) {

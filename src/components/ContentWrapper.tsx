@@ -1,6 +1,6 @@
 import React from "react";
-import { Funnel } from "./content-blocks/types";
-import { useIsMobile } from "./hooks";
+import { Funnel } from "../content-blocks/types";
+import { useIsMobile } from "../hooks";
 
 interface Props {
   funnel: Funnel | null;

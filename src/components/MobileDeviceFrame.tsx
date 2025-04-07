@@ -1,6 +1,7 @@
 import React from "react";
-import { Funnel } from "./content-blocks/types";
 import { Braces } from "lucide-react";
+
+import { Funnel } from "../content-blocks/types";
 
 interface Props {
   funnel: Funnel | null;

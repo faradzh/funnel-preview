@@ -1,14 +1,13 @@
 import { useState } from "react";
 import "./App.css";
 
-import Pagination from "./Pagination";
 import { Funnel } from "./content-blocks/types";
-import UploadJson from "./UploadJson";
-import MobileDeviceFrame from "./MobileDeviceFrame";
-import ContentWrapper from "./ContentWrapper";
-import FunnelPages from "./FunnelPages";
-import MobilePreview from "./MobilePreview";
-
+import UploadJson from "./components/UploadJson";
+import MobileDeviceFrame from "./components/MobileDeviceFrame";
+import ContentWrapper from "./components/ContentWrapper";
+import FunnelPages from "./components/FunnelPages";
+import MobilePreview from "./components/MobilePreview";
+import Pagination from "./components/Pagination";
 import { useIsMobile } from "./hooks";
 
 function App() {
